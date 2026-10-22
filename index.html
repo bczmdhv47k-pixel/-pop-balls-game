@@ -41,16 +41,45 @@ body {
 
 .ball {
     position: absolute;
-    width: 55px;
-    height: 55px;
+    width: 58px;
+    height: 58px;
     border-radius: 50%;
     cursor: pointer;
+
+    background:
+        radial-gradient(
+            circle at 30% 25%,
+            rgba(255,255,255,0.95) 0%,
+            rgba(255,255,255,0.45) 8%,
+            transparent 20%
+        ),
+        linear-gradient(
+            135deg,
+            var(--ball-light),
+            var(--ball-color) 55%,
+            var(--ball-dark)
+        );
+
     box-shadow:
-        inset -8px -8px 15px rgba(0,0,0,0.2),
-        inset 8px 8px 15px rgba(255,255,255,0.35),
-        0 5px 15px rgba(0,0,0,0.3);
+        inset -8px -10px 15px rgba(0,0,0,0.22),
+        inset 8px 8px 12px rgba(255,255,255,0.35),
+        0 0 12px var(--ball-glow),
+        0 6px 18px rgba(0,0,0,0.35);
+
+    animation: ballFloat 1.2s ease-in-out infinite alternate;
+
+    transform-origin: center;
 }
 
+@keyframes ballFloat {
+    from {
+        transform: translateY(0) rotate(-3deg) scale(1);
+    }
+
+    to {
+        transform: translateY(-5px) rotate(3deg) scale(1.05);
+    }
+}
 #startScreen,
 #gameOver {
     position: absolute;
