@@ -299,6 +299,7 @@ let lives = 3;
 let gameRunning = false;
 let spawnTimer;
 let difficultyTimer;
+let imageSpawnTimer;
 
 const game = document.getElementById("game");
 const scoreElement = document.getElementById("score");
@@ -635,7 +636,7 @@ function endGame() {
 
     clearInterval(spawnTimer);
     clearInterval(difficultyTimer);
-    let imageSpawnTimer;
+    clearInterval(imageSpawnTimer);
 
     document.querySelectorAll(".ball").forEach(ball => ball.remove());
 
