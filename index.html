@@ -389,15 +389,17 @@ const rect = ball.getBoundingClientRect();
 const centerX = rect.left + rect.width / 2;
 const centerY = rect.top + rect.height / 2;
 
-for (let i = 0; i < 12; i++) {
+const particleCount = isGolden ? 24 : 12;
+
+for (let i = 0; i < particleCount; i++) {
 
     const particle = document.createElement("div");
 
     particle.style.position = "fixed";
     particle.style.left = centerX + "px";
     particle.style.top = centerY + "px";
-    particle.style.width = "7px";
-    particle.style.height = "7px";
+    particle.style.width = isGolden ? "9px" : "7px";
+particle.style.height = isGolden ? "9px" : "7px";
     particle.style.borderRadius = "50%";
     particle.style.background = ball.style.getPropertyValue("--ball-color");
     particle.style.boxShadow =
