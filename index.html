@@ -139,6 +139,23 @@ body {
         transform: translateY(-5px) rotate(3deg) scale(1.05);
     }
 }
+#game::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        radial-gradient(circle, #ffffff 1px, transparent 1px),
+        radial-gradient(circle, #ffffff88 1px, transparent 1px);
+    background-size: 70px 70px, 110px 110px;
+    animation: stars 12s linear infinite;
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+@keyframes stars {
+    from { transform: translateY(0); }
+    to { transform: translateY(70px); }
+}
 #startScreen,
 #gameOver {
     position: absolute;
