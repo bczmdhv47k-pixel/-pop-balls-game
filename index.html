@@ -342,6 +342,7 @@ function startGame() {
     clearInterval(difficultyTimer);
 
     spawnTimer = setInterval(createBall, 700);
+    imageSpawnTimer = setInterval(createImageObject, 2500);
 
     difficultyTimer = setInterval(() => {
         fallSpeed += 0.25;
@@ -634,6 +635,7 @@ function endGame() {
 
     clearInterval(spawnTimer);
     clearInterval(difficultyTimer);
+    let imageSpawnTimer;
 
     document.querySelectorAll(".ball").forEach(ball => ball.remove());
 
